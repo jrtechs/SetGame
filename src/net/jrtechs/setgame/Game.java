@@ -6,8 +6,8 @@ Game class keeps track of the score hand and deck
 
 package net.jrtechs.setgame;
 
-import java.awt.Color;//for colors of the buttons
-import java.util.ArrayList; //for the arraylist
+import java.awt.Color;
+import java.util.ArrayList;
 
 public class Game 
 {
@@ -35,12 +35,9 @@ public class Game
         timeOnSet =  0;
     }
     public void timerTic()
-    {
-        
+    {        
         time++;
         timeOnSet++;
-        
-        
     }
     public Card[] getHand()
     {

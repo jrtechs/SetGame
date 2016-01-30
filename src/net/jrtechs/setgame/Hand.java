@@ -15,11 +15,7 @@ public class Hand
         int count = 0;
         for(Card c: hand)
         {
-            if(c == null)
-            {
-                //skip the null cards
-            }
-            else
+            if(c != null)
             {
                 transfer[count] = c;
                 count++;
@@ -37,12 +33,10 @@ public class Hand
     }
     public void display()
     {
-        
+
         for(Card elem : hand)
              System.out.print(elem + "  ");
         System.out.println("");
-        
-            
     }
     public Card[] getHand()
     {

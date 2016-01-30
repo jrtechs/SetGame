@@ -21,21 +21,15 @@ public class SetGame extends javax.swing.JFrame implements ActionListener
         cmdFindSet.setEnabled(false);
         cmdOpen3.setEnabled(false);
         
-        //creates an event listener for the timer
+        //creates an event listener for the timer in the game class
         ActionListener actTimer = new ActionListener()
-        {
-            
+        { 
             public void actionPerformed(ActionEvent e)
             {
-                if(game == null)
-                {
-                    
-                }
-                else
+                if(game != null)
                 {
                     game.timerTic();
                     lblTime.setText("Time " + game.getTime());
-                    
                 }
             }
         };
@@ -83,7 +77,6 @@ public class SetGame extends javax.swing.JFrame implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        //System.out.println(e);
         //casts the object of e to a setButton then calls the getLoc to find its index location in the cards "setButtons" array
         SetButton clicked = (SetButton)e.getSource();
         cards[clicked.getLoc()].clicked();
@@ -182,19 +175,16 @@ public class SetGame extends javax.swing.JFrame implements ActionListener
         lblSetsOnBoard.setText("Sets on board " + game.getSetsLeft());
         if(game.getSetsLeft() == 0)
         {
-            
             cmdFindSet.setEnabled(false);
             endGame();
         }
         else if(game.getHand().length==12 && game.getDeck().cardsLeft() > 2)
         {
-            cmdOpen3.setEnabled(true);
-            
+            cmdOpen3.setEnabled(true); 
         }
     }
-    
     private void cmdExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdExitActionPerformed
-        System.exit(-1);
+        System.exit(0);
     }//GEN-LAST:event_cmdExitActionPerformed
     private void endGame()
     {
@@ -206,9 +196,7 @@ public class SetGame extends javax.swing.JFrame implements ActionListener
         {
             game = null;
             cmdOpen3.setEnabled(false);
-            JOptionPane.showMessageDialog(null,"There are no more sets left on the board.","End of Game",JOptionPane.WARNING_MESSAGE);
-            
-            
+            JOptionPane.showMessageDialog(null,"There are no more sets left on the board.","End of Game",JOptionPane.WARNING_MESSAGE); 
         }
     }
     private void cmdFindSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdFindSetActionPerformed

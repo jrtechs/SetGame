@@ -33,11 +33,7 @@ public class SetButton extends JButton
     }
     public void update()
     {
-        if(card == null)
-        {
-            //do nothing
-        }
-        else
+        if(card != null)
         {
             //sets the image of the button baised on its properties
             //images located in the /src folder, file are named as a 4 digit number
